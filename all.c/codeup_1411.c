@@ -9,14 +9,18 @@ int main()
         scanf("%d", &str[i]);
     for (int i = 1; i <= n; i++)
     {
-        for (int j = 0; i < n - 1; i++)
+        for (int j = 0; j < n - 1; j++)
         {
             if (str[j] == i)
                 break;
             else
-                a = i;
+            {
+                printf("%d",i);
+                return 0;
+            }
+                
         }
     }
-    printf("%d", a);
+    printf("\n%d", a);
     return 0;
 }
