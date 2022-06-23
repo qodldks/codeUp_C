@@ -2,20 +2,22 @@
 
 int main()
 {
-    int n, m, x=1, y=1, d = 1, cnt = 2;
+    int n, m, x, y, d , cnt = 2;
     int str[102][102] = {0,};
-    //scanf("%d %d", &n, &m);
-    scanf("%d", &n);
+    scanf("%d %d", &n,&m);
     for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= n; j++)
+        for (int j = 1; j <= m; j++)
             str[i][j] = 1;
+    x=m;
+    y=n;
+    d=-1;
     while (1)
     {
         if (str[y][x+d] == 1)
             x+=d;
-        else if (str[y+1][x] == 1)
+        else if (str[y-1][x] == 1)
         {
-            y++;
+            y--;
             d*=-1;
         }
         else
@@ -25,7 +27,7 @@ int main()
     }
     for (int i = 1; i <= n; i++)
     {
-        for (int j = 1; j <= n; j++)
+        for (int j = 1; j <= m; j++)
             printf("%d ", str[i][j]);
         printf("\n");
     }
