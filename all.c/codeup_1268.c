@@ -13,4 +13,5 @@ int main()
          cnt++;
    }
    printf("%d", cnt);
+   return 0;
 }

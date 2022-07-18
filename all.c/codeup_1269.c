@@ -8,4 +8,5 @@ int main()
    for (i = 1; i < n; i++)
       result = result * b + c;
    printf("%d", result);
+   return 0;
 }

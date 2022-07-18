@@ -13,4 +13,5 @@ int main()
          sum += a;
    }
    printf("%d", sum);
+   return 0;
 }
