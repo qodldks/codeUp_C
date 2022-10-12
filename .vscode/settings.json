@@ -5,5 +5,9 @@
       "cstdarg": "c",
       "cstdio": "c"
    },
-   "C_Cpp.errorSquiggles": "Disabled"
+   "C_Cpp.errorSquiggles": "Disabled",
+   "prettier.tabWidth": 3,
+   "pythonIndent.useTabOnHangingIndent": true,
+   "editor.tabSize": 3,
+   "editor.detectIndentation": false
 }

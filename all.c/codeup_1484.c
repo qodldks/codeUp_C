@@ -1,32 +1,65 @@
 #include <stdio.h>
 
-int a[105][105]={1};
-int i,j,x,y,n,m;
-dy[4]={0,1,0,-1}, dx[4]={1,0,-1,0};
-
-safe(int a,int b) {return (0<=a&&a<n)&&(0<=b && b<n);}
-int main()
+int main(void)
 {
-    int ny,nx,cnt=1;
-    scanf("%d %d",&n,&m);
-    int s=n*m;
+	int Arr[101][101] = {};
+	int n, m, k, x = 1, i = 1, j = 1, Xaxis = 1, Yaxis = 1;
+	scanf("%d %d", &n, &m);
 
-    while (s>cnt)
-    {
-        ny=y+dy[i%4], nx=x+dx[i%4];
-        if (safe(ny,nx) && !a[ny][nx])
-        {
-            a[ny][nx]=++cnt;
-            y=ny,x=nx;
-        }
-        else i++;    
-    }
+	for (k = 1; k <= n * m; k++)
+	{
+		Arr[i][j] = x;
+		x++;
+		if (j <= m && Xaxis == 1 && Yaxis == 1)
+		{
+			if (j + 1 <= m && Arr[i][j + 1] == 0)
+			{
+				j++;
+			}
+			else
+			{
+				i++;
+				Xaxis = -1;
+			}
+		}
+		else if (i <= n && Xaxis == -1 && Yaxis == 1)
+		{
+			if (i + 1 <= n && Arr[i + 1][j] == 0)
+				i++;
+			else
+			{
+				j--;
+				Yaxis = -1;
+			}
+		}
+		else if (j >= 1 && Xaxis == -1 && Yaxis == -1)
+		{
+			if (j - 1 > 0 && Arr[i][j - 1] == 0)
+				j--;
+			else
+			{
+				i--;
+				Xaxis = 1;
+			}
+		}
+		else if (i >= 1 && Yaxis == -1 && Xaxis == 1)
+		{
+			if (i - 1 > 0 & Arr[i - 1][j] == 0)
+				i--;
+			else
+			{
+				j++;
+				Yaxis = 1;
+			}
+		}
+	}
 
-    for ( i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-            printf("%d",a[i][j]);
-        printf("\n");
-    }
-    return 0;
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j <= m; j++)
+			printf("%d ", Arr[i][j]);
+		printf("\n");
+	}
+
+	return 0;
 }
