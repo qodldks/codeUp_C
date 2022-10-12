@@ -2,8 +2,19 @@
 
 int main()
 {
-   int n,a,b;
-   //a=바꾼후 첫째자리,b=바꾼후 둘째자리
-   scanf("%d",&n);
-   a=n
+	int num, a, b;
+	scanf("%d", &num);
+
+	a = num / 10;
+	b = num % 10;
+
+	num = (b * 10 + a) * 2;
+	if (num >= 100)
+		num = num - 100;
+	printf("%d\n", num);
+	if (num <= 50)
+		printf("GOOD");
+	else
+		printf("OH MY GOD");
+	return 0;
 }
