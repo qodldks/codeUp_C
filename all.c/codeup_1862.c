@@ -12,7 +12,6 @@ int f(int k)
 int main()
 {
 	scanf("%d", &n);
-	f(n);
-	printf("%d", memo[n]);
+	printf("%d", f(n));
 	return 0;
 }
