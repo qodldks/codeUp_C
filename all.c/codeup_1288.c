@@ -24,6 +24,7 @@
 // 	return 0;
 // }
 
+
 // 다이나믹
 #include <stdio.h>
 
