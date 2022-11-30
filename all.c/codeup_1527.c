@@ -1,7 +1,11 @@
-#include <stdio.h>
+// #include <stdio.h>
 
-int main()
-{
-   
-   return 0;
+void f(){
+	printf("123");
 }
+
+// int main()
+// {
+//    f();
+//    return 0;
+// }
